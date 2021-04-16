@@ -170,7 +170,7 @@ table tr:nth-child(odd) td{
 
 .accordion .accordionContentBx.active .accordionContent{
     height: auto;
-    max-height: 1000px;  
+    max-height: 1200px;  
     padding: 10px;
 }
 
