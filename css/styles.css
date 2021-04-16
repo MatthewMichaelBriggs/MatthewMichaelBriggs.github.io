@@ -5,15 +5,48 @@
     font-family: sans-serif;
 }
 
+
 body{
     background: #f0f0f0;
 }
 
+p{
+    margin: 15px;
+    font-size: 18px;
+}
+
+a{
+    color: #234;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 15px;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table th{
+    text-align: left;
+    color: #FFF;
+    background-color: #28435d;
+    padding: 4px 30px 4px 8px;
+}
+
+table td{
+    border: 1px solid #e3e3e3;
+    padding: 4px 8px;
+}
+
+table tr:nth-child(odd) td{
+    background-color: #E8E8E8;
+}
+
 .container{
-    width: 100%;
-    max-width: 700px;
+    width: 80%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .lbl-menu{
@@ -36,7 +69,9 @@ body{
     position: relative;
 }
 
-.content div{
+.tab1,.tab2,.tab3,.tab4
+{
+    width: 100%;
     position: absolute;
     line-height: 1.8;
     transition: all 600ms ease;
@@ -62,7 +97,11 @@ body{
     transform: scale(1);
 }
 
-.content div:after{
+.content .tab1:after,
+.content .tab2:after,
+.content .tab3:after,
+.content .tab4:after
+{
     position: absolute;
     content: "";
     border-left: 10px solid transparent;
@@ -83,5 +122,272 @@ body{
 
 .content .tab4:after{
     left: 345px;
+}
+
+.accordion{
+    margin: auto;
+}
+
+.accordion .accordionContentBx{
+    position: relative;
+    background: #E8E8E8;
+}
+
+.accordion .accordionContentBx .lbl-accordion{
+    position: relative;
+    padding: 10px;
+    background: #234;
+    color: #fff;
+    cursor: pointer;
+}
+
+.accordion .accordionContentBx .lbl-accordion::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 2em;
+}
+
+.accordion .accordionContentBx.active .lbl-accordion::before{
+    content: '-';
+}
+
+.accordion .accordionContentBx .accordionContent{
+    position: relative;
+    background: #E8E8E8;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+.accordion .accordionContentBx.active .accordionContent{
+    height: auto;
+    max-height: 1000px;  
+    padding: 10px;
+}
+
+.skillsBar{
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.skillsBar .bar{
+    margin: 20px 0;
+}
+
+.skillsBar .bar:first-child{
+    margin-top: 0;
+}
+
+.skillsBar .bar .info{
+    margin-bottom: 5px;
+}
+
+.skillsBar .bar .info span{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.skillsBar .bar .progressLine{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.05),
+                      0px 1px rgba(255,255,255,0.8);
+}
+
+.bar #progressLineCPP.animate span{
+    transform-origin: left;
+    animation: animateBarCPP 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineCPP span::after{
+    content: "95%";
+}
+
+@keyframes animateBarCPP {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 95%;
+    }
+}
+
+.bar #progressLineCSharp.animate span{
+    transform-origin: left;
+    animation: animateBarCSharp 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineCSharp span::after{
+    content: "85%";
+}
+
+@keyframes animateBarCSharp {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+}
+
+.bar #progressLinePython.animate span{
+    transform-origin: left;
+    animation: animateBarPython 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLinePython span::after{
+    content: "80%";
+}
+
+@keyframes animateBarPython {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+.bar #progressLineSQL.animate span{
+    transform-origin: left;
+    animation: animateBarSQL 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineSQL span::after{
+    content: "75%";
+}
+
+@keyframes animateBarSQL {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+.bar #progressLineHTMLCSS.animate span{
+    transform-origin: left;
+    animation: animateBarHTMLCSS 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineHTMLCSS span::after{
+    content: "75%";
+}
+
+@keyframes animateBarHTMLCSS {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+.bar #progressLineJava.animate span{
+    transform-origin: left;
+    animation: animateBarJava 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineJava span::after{
+    content: "70%";
+}
+
+@keyframes animateBarJava {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+.bar #progressLineC.animate span{
+    transform-origin: left;
+    animation: animateBarC 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineC span::after{
+    content: "60%";
+}
+
+@keyframes animateBarC {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+
+.bar #progressLineJavascript.animate span{
+    transform-origin: left;
+    animation: animateBarJavascript 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar #progressLineJavascript span::after{
+    content: "50%";
+}
+
+@keyframes animateBarJavascript {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 50%;
+    }
+}
+
+.bar .progressLine span{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #234;
+    border-radius: 10px;
+}
+
+.bar .progressLine span::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -10px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #000;
+}
+
+.bar .progressLine span::after{
+    position: absolute;
+    right: 0;
+    top: -28px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    background: #000;
+    padding: 1px 8px;
+    border-radius: 3px;
+}
+
+.box{
+    position: relative;
+    background: #FFF;
+}
+
+.box .lbl-box{
+    position: relative;
+    padding: 10px;
+    background: #234;
+    color: #fff;
 }
 
